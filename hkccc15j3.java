@@ -1,51 +1,45 @@
 import java.util.*;
 import java.io.*;
-
 public class hkccc15j3 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	public static void main(String[] args) throws IOException{
-		int board = readInt();
-        int queens = readInt();
-        int tot = board*board;
-        boolean[][] arr = new boolean[board][board];
+		int n = readInt(), m = readInt();
+		boolean [][] a = new boolean[n+1][n+1];
+		for(int k = 1; k <= m; k++) {
+			int r = readInt(), c = readInt();
+			for(int i = 1; i <= n; i++) {
+				a[r][i] = true;
+			}
 
-        for (int i = 0; i < queens; i++) {
-            int x = readInt();
-            int y = readInt();
-            for (int j = 0; j < board; j++) {
-                if (!arr[j][y]) {
-                    arr[j][y] = true;
-                    tot--;
-                }
-                if (!arr[x][j]) {
-                    arr[x][j] = true;
-                    tot--;
-                }
-            }
-            for (int j = 0; j < board-x; j++) {
-                if (!arr[x+j][y+j]) {
-                    arr[x+j][y+j] = true;
-                    tot--;
-                }
-                if (!arr[x+j][y-j]) {
-                    arr[x+j][y-j] = true;
-                    tot--;
-                }
-            }
-            for (int j = 0; j < x; j++) {
-                if (!arr[x-j][y+j]) {
-                    arr[x-j][y+j] = true;
-                    tot--;
-                }
-                if (!arr[x-j][y-j]) {
-                    arr[x-j][y-j] = true;
-                    tot--;
-                }
-            }
-        }
+			for(int i = 1; i <= n; i++) {
+				a[i][c] = true;
+			}
 
-        System.out.println(tot);
+			for(int i = 1; i <= n; i++) {
+				int j = r+c-i;
+				if(j >= 1 && j <= n) {
+                    a[i][j] = true;
+                }
+			}
+
+			for(int i = 1; i <= n; i++) {
+				int j = i - (r-c);
+				if(j >= 1 && j <= n) {
+                    a[i][j] = true;
+                }
+			}
+		}
+		int ans = 0;
+		for(int i = 1; i <= n; i++) {
+			for(int j = 1; j <= n; j++) {
+				if(!a[i][j]) {
+                    ans++;
+                }
+			}
+		}
+        
+		System.out.println(ans);
 	}
 	static String next () throws IOException {
 		while (st == null || !st.hasMoreTokens())
