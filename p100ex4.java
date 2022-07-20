@@ -1,31 +1,17 @@
 import java.util.*;
 import java.io.*;
-public class dmopc14c7p2 {
+public class p100ex4 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	public static void main(String[] args) throws IOException{
-		int a = readInt(), arr[] = new int[a];
-		boolean increasing = true;
-        int min = 0, max = 0;
-
-		for(int i = 0; i < a; i++) {
-			arr[i] = readInt();
-		}
-		
-		for (int i = 0; i < a; i++) {
-			if (arr[i] < arr[min]) min = i;
-			if (arr[i] > arr[max]) max = i;
-		}
-
-		for (int i = min + 1; i <= max; i++) {
-			if (arr[i-1] >= arr[i]) increasing = false;
-		}
-
-		if (min < max && increasing) {
-			System.out.println(arr[max] - arr[min]);
-		} else {
-			System.out.println("unknown");
-		}
+		String str = readLine();
+        if (str == "MG") System.out.println("midget girls");
+        else if (str == "MB") System.out.println("midget boys");
+        else if (str == "JG") System.out.println("junior girls");
+        else if (str == "JB") System.out.println("junior boys");
+        else if (str == "SG") System.out.println("senior girls");
+        else if (str == "SB") System.out.println("senior boys");
+        else System.out.println("invalid code");
 	}
 	static String next () throws IOException {
 		while (st == null || !st.hasMoreTokens())
