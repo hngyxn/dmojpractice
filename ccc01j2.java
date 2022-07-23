@@ -4,7 +4,21 @@ public class ccc01j2 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	public static void main(String[] args) throws IOException{
-		
+		int x = readInt();
+        int m = readInt();
+        int n = 1;
+        boolean haha = false;
+        while (n < m) {
+            if ((n*x) % m == 1) {
+                System.out.println(n);
+                haha = true;
+                break;
+            } else {
+                n++;
+            }
+        }
+        if (!haha) System.out.println("No such integer exists.");
+
 	}
 	static String next () throws IOException {
 		while (st == null || !st.hasMoreTokens())
