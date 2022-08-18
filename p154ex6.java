@@ -1,22 +1,28 @@
 import java.util.*;
 import java.io.*;
-public class p129ex5 {
+public class p154ex6 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	public static void main(String[] args) throws IOException{
-		char c = readCharacter();
-        String str = readLine();
-        System.out.println(str);
-        String str2 = str.toLowerCase();
-        char[] arr = str2.toCharArray();
-        int i = 0;
-        int count = 0;
-        while (arr[i] != '.') {
-            if (arr[i] == c) count++;
-            i++;
+		double rate = readDouble();
+        rate /= 100;
+        rate += 1;
+        double pop = readDouble();
+        int year = readInt();
+        int finalpop = readInt();
+
+        while (true) {
+            if (pop >= finalpop) {
+                break;
+            }
+            pop *= rate;
+            year++;
         }
-        System.out.println(count);
-	}
+
+        System.out.println(year);
+
+
+    	}
 	static String next () throws IOException {
 		while (st == null || !st.hasMoreTokens())
 			st = new StringTokenizer(br.readLine().trim());

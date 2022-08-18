@@ -1,22 +1,17 @@
 import java.util.*;
 import java.io.*;
-public class p129ex5 {
+public class p140ex3 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	public static void main(String[] args) throws IOException{
-		char c = readCharacter();
-        String str = readLine();
-        System.out.println(str);
-        String str2 = str.toLowerCase();
-        char[] arr = str2.toCharArray();
-        int i = 0;
-        int count = 0;
-        while (arr[i] != '.') {
-            if (arr[i] == c) count++;
-            i++;
+		String str = readLine();
+        char[] arr = str.toCharArray();
+
+        for (int i = arr.length-1; i >= 0; i--) {
+            System.out.println(arr[i]);
         }
-        System.out.println(count);
-	}
+
+    	}
 	static String next () throws IOException {
 		while (st == null || !st.hasMoreTokens())
 			st = new StringTokenizer(br.readLine().trim());

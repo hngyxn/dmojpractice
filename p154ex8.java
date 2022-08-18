@@ -1,21 +1,15 @@
 import java.util.*;
 import java.io.*;
-public class p129ex5 {
+public class p154ex8 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	public static void main(String[] args) throws IOException{
-		char c = readCharacter();
-        String str = readLine();
-        System.out.println(str);
-        String str2 = str.toLowerCase();
-        char[] arr = str2.toCharArray();
-        int i = 0;
-        int count = 0;
-        while (arr[i] != '.') {
-            if (arr[i] == c) count++;
-            i++;
+		int a = readInt();
+        for (int i = 1; i <= a; i++) {
+            if (a%i == 0) {
+                System.out.println(i);
+            }
         }
-        System.out.println(count);
 	}
 	static String next () throws IOException {
 		while (st == null || !st.hasMoreTokens())
