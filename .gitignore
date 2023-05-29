@@ -1,0 +1,7 @@
+/target/
+/.metals/
+/.bloop/
+/.bsp/
+/.vscode/
+/.idea/
+/.settings/
